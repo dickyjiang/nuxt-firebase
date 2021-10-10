@@ -35,6 +35,23 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: '<apiKey>',
+          authDomain: '<authDomain>',
+          projectId: '<projectId>',
+          storageBucket: '<storageBucket>',
+          messagingSenderId: '<messagingSenderId>',
+          appId: '<appId>',
+          measurementId: '<measurementId>'
+        },
+        services: {
+          auth: true // Just as example. Can be any other service.
+        }
+      }
+    ]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
