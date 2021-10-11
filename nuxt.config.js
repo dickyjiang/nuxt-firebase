@@ -22,6 +22,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/firebase.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -39,16 +40,23 @@ export default {
       '@nuxtjs/firebase',
       {
         config: {
-          apiKey: '<apiKey>',
-          authDomain: '<authDomain>',
-          projectId: '<projectId>',
-          storageBucket: '<storageBucket>',
-          messagingSenderId: '<messagingSenderId>',
-          appId: '<appId>',
-          measurementId: '<measurementId>'
+          apiKey: 'AIzaSyC7QBOzZakKN_KaJ5P3Bb3pCA6KsWobE_w',
+          authDomain: 'sams-abdea.firebaseapp.com',
+          projectId: 'sams-abdea',
+          storageBucket: 'sams-abdea.appspot.com',
+          messagingSenderId: '3508375956',
+          appId: '1:3508375956:web:f184f2e92d46770fe93f81',
+          // measurementId: '<measurementId>'
         },
         services: {
-          auth: true // Just as example. Can be any other service.
+          auth: true, // Just as example. Can be any other service.
+          firestore: true,
+          functions: true,
+          storage: true,
+          database: true,
+        },
+        env: {
+          FIRE_ENV: process.env.FIRE_ENV
         }
       }
     ]
